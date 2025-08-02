@@ -1,0 +1,11 @@
+{
+  "message.login.not_register": "You're not registered! Use /register instead.",
+  "message.login.login": "Logged in.",
+  "message.login.error_password": "Incorrect password!",
+  "message.login.was_registered": "You're already registered! Use /login instead.",
+  "message.login.error_password_register": "Passwords don't match! Repeat it correctly.",
+  "message.login.register": "Successfully registered.",
+  "message.login.welcome": "§9Welcome to the server, in order to play, you must log in.\n§eLog in using /login and register using /register",
+  "message.login.title_tip": "Identify yourself",
+  
+}

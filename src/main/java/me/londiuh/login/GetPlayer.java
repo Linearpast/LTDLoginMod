@@ -1,13 +1,12 @@
 package me.londiuh.login;
 
-import me.londiuh.login.PlayerLogin;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
 import java.util.HashMap;
 import java.util.UUID;
 
 public class GetPlayer extends HashMap<UUID, PlayerLogin> {
-    public PlayerLogin get(ServerPlayerEntity player) {
-        UUID uuid = player.getUuid();
+    public PlayerLogin get(ServerPlayer player) {
+        UUID uuid = player.getUUID();
         if (containsKey(uuid)) {
             return super.get(uuid);
         }

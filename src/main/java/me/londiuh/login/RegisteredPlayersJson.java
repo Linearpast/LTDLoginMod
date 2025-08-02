@@ -26,7 +26,7 @@ public class RegisteredPlayersJson {
 
     private static JsonObject findPlayerObject(String username) {
         JsonObject playerObject = null;
-        if (jsonArray.size() == 0) {
+        if (jsonArray.isEmpty()) {
             return null;
         }
         for (int i = 0; i < jsonArray.size(); i++) {

@@ -1,23 +1,29 @@
 package me.londiuh.login;
 
-import me.londiuh.login.commands.*;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.minecraft.server.network.ServerPlayerEntity;
+import me.londiuh.login.commands.LoginCommand;
+import me.londiuh.login.commands.RegisterCommand;
+import me.londiuh.login.commands.WhitelistCommand;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-public class LoginMod implements ModInitializer {
+@Mod(LoginMod.MODID)
+public class LoginMod {
+    public static final String MODID = "login";
     static GetPlayer getPlayer = new GetPlayer();
 
-    @Override
-    public void onInitialize() {
+    public LoginMod(){
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         RegisteredPlayersJson.read();
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            LoginCommand.register(dispatcher);
-            RegisterCommand.register(dispatcher);
-        });
+        MinecraftForge.EVENT_BUS.register(LoginCommand.class);
+        MinecraftForge.EVENT_BUS.register(RegisterCommand.class);
+        MinecraftForge.EVENT_BUS.register(WhitelistCommand.class);
     }
 
-    public static PlayerLogin getPlayer(ServerPlayerEntity player) {
+
+    public static PlayerLogin getPlayer(ServerPlayer player) {
         return getPlayer.get(player);
     }
 }

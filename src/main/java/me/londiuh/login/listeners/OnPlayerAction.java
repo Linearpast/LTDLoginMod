@@ -2,16 +2,13 @@ package me.londiuh.login.listeners;
 
 import me.londiuh.login.LoginMod;
 import me.londiuh.login.PlayerLogin;
-import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
-import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket.Action;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 
 public class OnPlayerAction {
-    public static boolean canInteract(ServerPlayNetworkHandler networkHandler) {
-        ServerPlayerEntity player = networkHandler.player;
+    public static boolean canInteract(ServerGamePacketListenerImpl networkHandler) {
+        ServerPlayer player = networkHandler.player;
         PlayerLogin playerLogin = LoginMod.getPlayer(player);
-        boolean isLoggedIn = playerLogin.isLoggedIn();
-        return isLoggedIn;
+	    return playerLogin.isLoggedIn();
     }
 }

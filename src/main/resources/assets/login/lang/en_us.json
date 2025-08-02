@@ -1,0 +1,12 @@
+{
+  "message.login.not_register": "您还没有注册！请改用 /register",
+  "message.login.login": "登录成功.",
+  "message.login.error_password": "密码错误!",
+  "message.login.was_registered": "您已经注册了！请改用 /login.",
+  "message.login.error_password_register": "密码不匹配！请正确填写.",
+  "message.login.register": "注册成功.",
+  "message.login.welcome": "§9欢迎来到服务器，游玩前请登录.\n§e使用 /register <密码> <确认密码>注册.\n使用 /login <密码> 登录.\n你只有30秒的时间操作.",
+  "message.login.title_tip": "Identify yourself",
+  "message.login.kick": "30秒未登录游戏，已踢出.",
+  "message.login.whitelist": "ID：%s, UUID：%s, 已添加至服务器白名单内"
+}

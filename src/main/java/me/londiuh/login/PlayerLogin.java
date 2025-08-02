@@ -1,12 +1,12 @@
 package me.londiuh.login;
 
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
 
 public class PlayerLogin {
-    private ServerPlayerEntity player;
+    private final ServerPlayer player;
     private boolean loggedIn;
 
-    public PlayerLogin(ServerPlayerEntity player) {
+    public PlayerLogin(ServerPlayer player) {
         this.player = player;
     }
 
@@ -18,7 +18,7 @@ public class PlayerLogin {
         return loggedIn;
     }
 
-    public ServerPlayerEntity getPlayer() {
+    public ServerPlayer getPlayer() {
         return player;
     }
 }

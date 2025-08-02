@@ -2,10 +2,13 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.londiuh.login.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "server": [
-    "PlayerManagerMixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "login.refmap.json",
+  "mixins": [
     "ServerPlayNetworkHandlerMixin"
+  ],
+  "client": [
+
   ],
   "injectors": {
     "defaultRequire": 1
